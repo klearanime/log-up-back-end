@@ -14,13 +14,16 @@ const password3 = 'like a BOSS';
 // **YOUR** code below. Pass those tests!
 
 function isValidEmail(email) {
-  let ending = email.indexOf('@codeimmersives.com') >= 1;
-  if (email == ending) {
-  } return true
-} 
+  let ending = email.endsWith('@codeimmersives.com');
+  if(ending && email.length >= 20) {
+    return true
+  } else {
+    return false
+  }
+}
 
 function isValidPassword(password) {
-  if(password.length >= 8 && password &&password.toUpperCase() !== password && password.toLowerCase() !== password) {
+  if(password.length >= 8 && password.toUpperCase() || password.toLowerCase()) {
     return true
   } 
 }
